@@ -1,9 +1,7 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class mainMenu {
     private JButton Add;
@@ -12,7 +10,7 @@ public class mainMenu {
     private JList list1;
     private int number = 0;
     private JPanel mainMenu;
-    private ArrayList<Message> dialog;
+    public ArrayList<Message> dialog;
     public mainMenu() {
         dialog = new ArrayList<Message>();
         list1.setListData(dialog.toArray());
@@ -23,6 +21,7 @@ public class mainMenu {
                 Message r = BoxAlert.main();
                 if(r != null) {
                     dialog.add(r);
+
                     for(int x = 0; x < dialog.size(); x++) {
                         Message temp = dialog.get(x);
                         temp.setNumber(x);
